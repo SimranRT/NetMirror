@@ -1,0 +1,22 @@
+.hero{
+ height:70vh;
+ background-size:cover;
+ position:relative;
+ color:white;
+ margin-left:60px;
+}
+
+.hero::before{
+ content:"";
+ position:absolute;
+ width:50%;
+ height:100%;
+ background:linear-gradient(to right,black,transparent);
+}
+
+.hero-content{
+ position:absolute;
+ top:40%;
+ left:40px;
+ max-width:500px;
+}

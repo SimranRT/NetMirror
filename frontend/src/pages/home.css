@@ -1,0 +1,14 @@
+body{
+ background:black;
+ color:white;
+}
+
+.movie-grid{
+ display:flex;
+ flex-wrap:wrap;
+ gap:10px;
+}
+
+img{
+ border-radius:8px;
+}

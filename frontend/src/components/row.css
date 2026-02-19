@@ -1,0 +1,16 @@
+.row{
+ display:flex;
+ overflow-x:auto;
+ gap:10px;
+ padding:20px;
+}
+
+.row img{
+ width:200px;
+ border-radius:6px;
+ transition:0.3s;
+}
+
+.row img:hover{
+ transform:scale(1.15);
+}
