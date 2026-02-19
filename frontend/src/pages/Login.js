@@ -15,39 +15,48 @@ export default function Login(){
 
       const res = await loginUser({email,password});
 
-      if(res.data.message === "Login success"){
+      console.log("LOGIN RESPONSE:", res.data); // DEBUG
+
+      // Accept any success response safely
+      if(
+        res.data === "Login success" ||
+        res.data?.message === "Login success"
+      ){
         navigate("/home");
-      } else {
+      }else{
         alert("Invalid login");
       }
 
     } catch(err){
-      console.log(err);
+      console.log("LOGIN ERROR:", err);
+      alert("Server error or backend waking up. Try again.");
     }
 
   };
 
-return(
-  <div className="auth-container">
+  return(
+    <div className="auth-container">
 
       <h1>Login</h1>
 
       <input
         placeholder="Email"
+        value={email}
         onChange={(e)=>setEmail(e.target.value)}
       />
 
       <input
         type="password"
         placeholder="Password"
+        value={password}
         onChange={(e)=>setPassword(e.target.value)}
       />
 
       <button onClick={login}>Login</button>
-      <p onClick={()=>navigate("/register")}>
-  New user? Register
-</p>
 
+      <p onClick={()=>navigate("/register")}>
+        New user? Register
+      </p>
 
     </div>
   );
