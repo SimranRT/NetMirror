@@ -1,3 +1,7 @@
+const express = require("express");
+const router = express.Router();
+
+
 router.post("/register", async (req,res)=>{
 
  const {username,email,password,phone} = req.body;
@@ -19,3 +23,4 @@ router.post("/register", async (req,res)=>{
   }
  );
 });
+module.exports = router;
